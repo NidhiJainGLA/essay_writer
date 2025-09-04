@@ -28,11 +28,9 @@ function App() {
             setdata3(0);
             return;
            }
-           let lastChar = y.charAt(y.length - 1);
-            if (/^[a-zA-Z0-9]$/.test(lastChar)) {
-           data3++;
-           setdata3(data3);
-      }
+             let matches = y.match(/[a-zA-Z0-9]/g);
+        let count = matches ? matches.length : 0;
+          setdata3(count);
       }
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-5 font-sans">
