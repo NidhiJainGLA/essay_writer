@@ -36,7 +36,7 @@ function App() {
           setdata3(count);
       }
       const genAI = new GoogleGenerativeAI("AIzaSyCMUelTuvLjROfWxPpejde4zflhVQg9iZI");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
   async function generate (prompt){
     const result = await model.generateContent(prompt);
   return result.response.text();
@@ -47,7 +47,6 @@ const [feedback, setfeedback] = useState("");
   const prompt = `just give me 3-4 lines about the feedback of my essay and below rate my essay  ${essay}`;
     let dat= await generate(prompt);
     setfeedback(dat);
-    console.log(s);
  }
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-5 font-sans">
